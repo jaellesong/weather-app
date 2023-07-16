@@ -4,24 +4,27 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-image : url('assets/bg-light.png');
+  --color-purple : #6C40B5;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-image: url('assets/bg-dark.png');
+    --color-purple : #28124D;
   }
 }
 
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.bg-purple{
+  background: var(--color-purple);
 }
